@@ -7,7 +7,7 @@ _start:
     .option norelax
     .option pop
 
-    call kmain                # Call your kernel main
+    call kmain                # Call kernel main
 
 ; halt:
 ;     j    halt                 # Infinite loop when kmain returns

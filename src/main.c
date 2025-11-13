@@ -1,6 +1,5 @@
 #include "commands.h"
-#include <stdint.h>
-
+#include "os/queue/circlequeue.h"
 int done = 0;
 char cmdbuf[256];
 uint8_t cmdlen = 0;
@@ -15,12 +14,7 @@ void backspace() {
   cmdlen = (cmdlen > 0) ? cmdlen - 1 : 0;
 }
 
-/*Execute by running:
-chmod +x run.bash && ./run.bash
-*/
 void kmain(void) {
-  fs_init();
-  fs_return();
   puts("\n> ");
 
   while (1) {
