@@ -21,3 +21,9 @@ struct Task cq_pop(struct CircleQueue *queue) {
   queue->current_length -= 1;
   return queue->taskbuffer[queue->current_start - 1];
 }
+
+struct CircleQueue cq_create(uint32_t maxlength, struct Task *taskbuffer) {
+    struct CircleQueue r = {0, 0, maxlength, 0, taskbuffer};
+    return r;
+
+}
